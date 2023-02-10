@@ -30,6 +30,7 @@ module.exports = {
                         })
                     } else {
                         return res.json({
+                            temperature,
                             weather:`${description}, it is currently ${temperature} degress out. it feels like ${feelslike} degrees out`,
                             location: data.location,
                             address: req.query.address
