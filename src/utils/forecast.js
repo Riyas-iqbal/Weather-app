@@ -15,6 +15,7 @@ const forecast = (data, callback) => {
             callback('Unable to proide search result', undefined)
         } else {
             callback(undefined, {
+                description: response.body.current.weather_descriptions[0],
                 temperature: response.body.current.temperature,
                 feelslike: response.body.current.feelslike
             })

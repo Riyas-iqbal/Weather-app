@@ -4,7 +4,7 @@ const userController = require('../contollers/userController');
 
 router
     .get('/',userController.index)
-    .get('weather',userController.weather)
+    .get('/weather',userController.weather)
     .get('/about',userController.about)
     .get('/help',userController.help)
     .get('*',userController.error)

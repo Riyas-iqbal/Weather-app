@@ -1,9 +1,11 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-
+const cors = require('cors')
 
 const app = express()
+app.use(cors())
+
 
 require('dotenv').config()
 

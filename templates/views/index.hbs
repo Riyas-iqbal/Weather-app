@@ -8,15 +8,32 @@
     <title>Weather App</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="main-content">
         {{>header}}
-        this is the main content
+        <p>Use this site to get your weather!</p>
+
+        <form>
+            {{!-- <input placeholder="Location"> --}}
+            {{!-- <button>Search</button> --}}
+
+            <div class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="Type to Search">
+                <button class="search-btn"" >
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+
+
     </div>
     {{>footer}}
-    
+
+    <script src="/js/constants.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

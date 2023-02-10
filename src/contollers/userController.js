@@ -16,7 +16,28 @@ module.exports = {
                 error: 'Please provide an address'
             });
         }
-
+        geocode(req.query.address, (error, data) => {
+            if (error) {
+                return res.send({
+                    error: error
+                })
+            } else {
+                console.log(data)
+                forecast(data, (error, { temperature, feelslike , description } = {}) => {
+                    if (error) {
+                        return res.send({
+                            error: error
+                        })
+                    } else {
+                        return res.json({
+                            weather:`${description}, it is currently ${temperature} degress out. it feels like ${feelslike} degrees out`,
+                            location: data.location,
+                            address: req.query.address
+                        })
+                    }
+                })
+            }
+        })
     },
 
     about(req, res) {
