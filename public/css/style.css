@@ -90,13 +90,24 @@ header a {
 }
 
 /* button style */
-#degree{
+
+#message-1{
+    font-size: 33px;
+    margin: 0;
+    color: darkblue;
+    font-weight: 700;
+    font-family: monospace;
+}
+
+#imgDiv{
+    display: flex;
+    align-items: center;
     margin-top: 150px;
 }
 
-#message-1{
-    /* margin-top: 150px; */
-}
-#message-1{
-    /* margin-top: 150px; */
+img{
+    width: 69px;
+    border-radius: 50px;
+    margin-left: 23px;
+    margin-top: 18px;
 }

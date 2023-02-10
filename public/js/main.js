@@ -5,8 +5,7 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 const degree = document.querySelector('#degree')
-
-
+const img = document.createElement('img');
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -14,6 +13,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     degree.textContent = ''
+    img.remove()
 
     fetch(`${baseUrl}/weather?address=${search.value}`)
         .then((response) => {
@@ -24,9 +24,11 @@ weatherForm.addEventListener('submit', (e) => {
                         messageOne.textContent = data.error
                     } else {
                         console.log(data)
-                        degree.textContent = data.temperature+'°'
+                        degree.textContent = data.temperature + '°'
                         messageOne.textContent = data.location
                         messageTwo.textContent = data.weather
+                        createIcon(data.icon)
+
                     }
                 })
         })
@@ -35,3 +37,8 @@ weatherForm.addEventListener('submit', (e) => {
         })
 
 })
+
+function createIcon(icon) {
+    img.src = icon
+    document.getElementById('imgDiv').appendChild(img);
+}

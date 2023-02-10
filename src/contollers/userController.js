@@ -23,7 +23,17 @@ module.exports = {
                 })
             } else {
                 console.log(data)
-                forecast(data, (error, { temperature, feelslike , description } = {}) => {
+                forecast(data, (error, 
+                    { 
+                        temperature,
+                        feelslike,
+                        description,
+                        icon,
+                        pressure,
+                        humidity,
+                        visibility
+                    } = {}) => {
+
                     if (error) {
                         return res.send({
                             error: error
@@ -33,7 +43,11 @@ module.exports = {
                             temperature,
                             weather:`${description}, it is currently ${temperature} degress out. it feels like ${feelslike} degrees out`,
                             location: data.location,
-                            address: req.query.address
+                            address: req.query.address,
+                            icon,
+                            pressure,
+                            humidity,
+                            visibility
                         })
                     }
                 })

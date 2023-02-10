@@ -17,7 +17,11 @@ const forecast = (data, callback) => {
             callback(undefined, {
                 description: response.body.current.weather_descriptions[0],
                 temperature: response.body.current.temperature,
-                feelslike: response.body.current.feelslike
+                feelslike: response.body.current.feelslike,
+                icon:   response.body.current.weather_icons[0],
+                pressure: response.body.current.pressure,
+                humidity: response.body.current.humidity,
+                visibility: response.body.current.visibility
             })
         }
     })
