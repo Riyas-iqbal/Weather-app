@@ -4,13 +4,17 @@ const forecast = require('../utils/forecast');
 module.exports = {
 
     index(req, res) {
+        const visitorIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress; //retrieve the IP address of visitor
+        console.log(visitorIp);
+
         res.render('index', {
-            title: 'Weather',
-            name: 'Riyas'
+            title: 'CloudCast',
+            name: 'Riyas Iqbal'
         })
     },
 
     weather(req, res) {
+        console.log('req received weather')
         if (!req.query.address) {
             return res.send({
                 error: 'Please provide an address'
@@ -61,13 +65,15 @@ module.exports = {
             name: 'Riyas'
         })
     },
+
     help(req, res) {
         res.render('help', {
             title: 'Help',
-            helpText: 'this is help text',
+            helpText: 'Coming soon...',
             name: 'Riyas'
         })
     },
+
     error(req, res) {
         res.render('404', {
             title: 'Error',

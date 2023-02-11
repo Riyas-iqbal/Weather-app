@@ -10,7 +10,7 @@ const img = document.createElement('img');
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    messageOne.textContent = 'Loading...'
+    messageOne.textContent = 'Working the magic of cloud cast...'
     messageTwo.textContent = ''
     degree.textContent = ''
     img.remove()
